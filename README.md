@@ -36,10 +36,10 @@ phash = require 'canvas-phash'
 
 Promise = require 'bluebird'
 Promise.all([
-	phash.getImageHash 'image.jpg'
-	phash.getImageHash 'otherImage.jpg'
+  phash.getImageHash 'image.jpg'
+  phash.getImageHash 'otherImage.jpg'
 ])
 .spread (hash1, hash2)->
-	dist = phash.getHammingDistance hash1, hash2
+  dist = phash.getHammingDistance hash1, hash2
 ```
 In the previous example, Promise.all is used to make the code readable. `require`ing `bluebird` is not necessary to use this package. The typical use-case would be to compute the hash of a single image via `phash.getImageHash('image.jpg').then (hash)->` and compare that against a list of pre-existing hashes for close matches.
