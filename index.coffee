@@ -13,8 +13,8 @@ bitCount = (i)->
   i = (i & 0x33333333) + ((i >>> 2) & 0x33333333);
   return (((i + (i >>> 4)) & 0x0F0F0F0F) * 0x01010101) >>> 24;
 
-getImageFromPath = (path)->
-  getPixels path
+getImageFromPath = (path, type)->
+  getPixels path, type
   .then (pixels)->
     pixels.width = pixels.shape[0]
     pixels.height = pixels.shape[1]
@@ -48,9 +48,9 @@ CanvasPhash =
       hash = sha256.digest "base64"
       hash
 
-  getImageHash: (path)->
-    if typeof path == 'string'
-      pixelPromise = getImageFromPath path
+  getImageHash: (path, type)->
+    if typeof path == 'string' or (Buffer.isBuffer(path) and type?)
+      pixelPromise = getImageFromPath path, type
     else
       pixelPromise = Promise.resolve path
 
