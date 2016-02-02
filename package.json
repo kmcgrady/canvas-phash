@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bluebird": "^2.9.6",
-    "get-pixels": "git@github.com:scijs/get-pixels.git#2e8766f62a9043d74a4b1047294a25fea5b2eacf"
+    "get-pixels": "^3.2.3"
   },
   "devDependencies": {},
   "scripts": {
