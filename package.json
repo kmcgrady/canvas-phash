@@ -2,7 +2,7 @@
   "name": "canvas-phash",
   "version": "2.0.3",
   "description": "A Canvas-based pHash Implementation",
-  "main": "index.js",
+  "main": "index.coffee",
   "dependencies": {
     "bluebird": "^2.9.6",
     "get-pixels": "^3.2.3"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/timhuff/canvas-phash"
+    "url": "https://github.com/kmcgrady/canvas-phash"
   },
   "author": "",
   "license": "ISC"
